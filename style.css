@@ -1,0 +1,139 @@
+/* PINK GIRLS — styles du site */
+:root {
+  --pink: #ed5b98;
+  --pink-dark: #c9447b;
+  --pink-soft: #ffe2ee;
+  --pink-pale: #fff7fa;
+  --text: #98516f;
+  --white: #fff;
+  --shadow: 0 12px 35px rgba(210, 91, 142, .12);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+body {
+  font-family: "Quicksand", sans-serif;
+  color: var(--text);
+  background: var(--pink-pale);
+}
+a { color: inherit; }
+.container { width: min(1120px, calc(100% - 40px)); margin-inline: auto; }
+
+.site-header {
+  position: sticky; top: 0; z-index: 20;
+  background: rgba(255, 247, 250, .94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #f8d1e0;
+}
+.nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 22px; }
+.logo {
+  color: var(--pink); text-decoration: none;
+  font: 600 28px "Fredoka", sans-serif; white-space: nowrap;
+}
+.logo span { color: #ff8bb8; }
+.nav-links { display: flex; align-items: center; gap: 23px; }
+.nav-links a {
+  text-decoration: none; font-weight: 700; font-size: 14px;
+  transition: color .2s ease;
+}
+.nav-links a:hover, .social-links a:hover { color: var(--pink); }
+.nav-cta, .button {
+  display: inline-flex; justify-content: center; align-items: center;
+  padding: 13px 22px; border-radius: 999px;
+  color: var(--white); background: var(--pink);
+  text-decoration: none; font-weight: 700;
+  box-shadow: 0 7px 18px rgba(237, 91, 152, .2);
+  transition: transform .2s, background .2s;
+}
+.nav-cta:hover, .button:hover { background: var(--pink-dark); transform: translateY(-3px); }
+.menu-toggle { display: none; border: 0; background: transparent; color: var(--pink); font-size: 26px; cursor: pointer; }
+
+.hero {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 82% 18%, rgba(255,255,255,.8), transparent 25%),
+    linear-gradient(125deg, #ffe8f1, #ffc9df);
+}
+.hero-inner { min-height: 430px; display: flex; align-items: center; justify-content: space-between; gap: 45px; padding-block: 55px; }
+.hero-copy { max-width: 550px; }
+.eyebrow { color: #d66b98; font-size: 11px; font-weight: 700; letter-spacing: 2px; margin-bottom: 12px; }
+.hero h1 { color: var(--pink); font: 600 clamp(44px, 6vw, 70px)/1.05 "Fredoka", sans-serif; margin-bottom: 20px; }
+.hero h1 span, .section-heading h2 span { color: #ff91ba; }
+.hero-text { max-width: 490px; font-size: 17px; line-height: 1.8; margin-bottom: 27px; }
+.hero-art {
+  position: relative; flex: 0 1 420px; min-height: 290px;
+  display: grid; place-items: center; border: 2px solid rgba(255,255,255,.6);
+  border-radius: 48% 52% 45% 55%; background: rgba(255,255,255,.38);
+  box-shadow: var(--shadow); transform: rotate(2deg);
+}
+.big-bow { font-size: clamp(90px, 12vw, 145px); filter: drop-shadow(0 12px 10px rgba(190, 70, 120, .15)); }
+.cute-friends { position: absolute; bottom: 35px; font-size: 54px; }
+.hero-art p { position: absolute; top: 28px; color: var(--pink-dark); font: 600 18px "Fredoka", sans-serif; }
+.sparkle { position: absolute; color: #ee77a8; font-size: 34px; }
+.sparkle-one { top: 35px; left: 35px; }
+.sparkle-two { right: 28px; top: 85px; }
+.sparkle-three { bottom: 35px; right: 55px; }
+
+.features { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; padding-block: 42px 25px; }
+.feature-card { text-align: center; padding: 20px 15px; border-radius: 23px; transition: .25s; }
+.feature-card:hover { background: var(--white); transform: translateY(-5px); box-shadow: var(--shadow); }
+.feature-icon {
+  width: 58px; height: 58px; display: grid; place-items: center;
+  margin: 0 auto 13px; border-radius: 50%; background: var(--pink-soft);
+  color: var(--pink); font-size: 29px;
+}
+.feature-card h2 { color: var(--pink); font: 500 21px "Fredoka", sans-serif; margin-bottom: 8px; }
+.feature-card p { font-size: 14px; line-height: 1.65; }
+
+.gallery-section { padding-block: 40px 65px; }
+.section-heading { text-align: center; margin-bottom: 28px; }
+.section-heading h2 { color: var(--pink); font: 600 clamp(30px, 4vw, 40px) "Fredoka", sans-serif; margin-bottom: 8px; }
+.section-heading > p:last-child { font-size: 14px; }
+.gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 19px; }
+.photo-card {
+  overflow: hidden; border: 1px solid #f8dce7; border-radius: 20px;
+  background: var(--white); text-align: center; box-shadow: 0 5px 18px rgba(190, 90, 130, .06);
+  transition: transform .25s, box-shadow .25s;
+}
+.photo-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+.photo-card img { display: block; width: 100%; height: 175px; object-fit: cover; }
+.photo-card h3 { color: var(--pink); font: 500 19px "Fredoka", sans-serif; padding: 15px 10px 5px; }
+.photo-card p { padding: 0 12px 17px; font-size: 13px; line-height: 1.5; }
+
+.quote-section { padding: 48px 0; text-align: center; background: var(--pink-soft); }
+.quote-heart { color: var(--pink); font-size: 25px; margin-bottom: 8px; }
+.quote-section h2 { color: var(--pink); font: 600 32px "Fredoka", sans-serif; margin-bottom: 12px; }
+.quote-section p { line-height: 1.8; }
+
+footer { padding: 28px 0; text-align: center; background: #ffd4e5; }
+.footer-content { display: grid; justify-items: center; gap: 9px; }
+.footer-content .logo { font-size: 25px; }
+.social-links { display: flex; gap: 20px; margin: 5px 0; }
+.social-links a { text-decoration: none; font-size: 14px; font-weight: 700; }
+footer small { font-size: 12px; }
+
+@media (max-width: 850px) {
+  .nav { flex-wrap: wrap; padding-block: 13px; }
+  .menu-toggle { display: block; margin-left: auto; }
+  .nav-cta { display: none; }
+  .nav-links { display: none; order: 3; width: 100%; flex-direction: column; gap: 15px; padding: 12px 0 5px; }
+  .nav-links.open { display: flex; }
+  .hero-inner { flex-direction: column; text-align: center; gap: 35px; }
+  .hero-art { width: min(100%, 420px); flex-basis: auto; min-height: 250px; }
+  .hero-text { margin-inline: auto; }
+  .features { grid-template-columns: repeat(2, 1fr); }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 440px) {
+  .container { width: min(100% - 28px, 1120px); }
+  .logo { font-size: 25px; }
+  .hero-inner { padding-block: 42px; }
+  .hero h1 { font-size: 46px; }
+  .hero-text { font-size: 15px; }
+  .features { gap: 5px; padding-block: 25px; }
+  .feature-card { padding: 15px 7px; }
+  .feature-card h2 { font-size: 18px; }
+  .gallery-grid { gap: 12px; }
+  .photo-card img { height: 130px; }
+  .photo-card h3 { font-size: 16px; }
+}
